@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in the css</title>
+    <style>
+        *{
+            color: cadetblue;
+        }
+        body{
+            background-color: rgb(59, 37, 114);
+        }
+        #h2{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="h2">
+        The Student Delatils
+    </h2>
+    <script>
+        let student ={
+            name: "Tarang",
+            Age: 19,
+            city : 'Malkapur'
+        };
+
+        //Accessing Properties
+        document.write("Name :- "+student.name+"<br>");
+        document.write("Age is :- "+student.Age+"<br>");
+        document.write("city is :- "+student.city+"<br>");
+
+        //Modifing the element
+        student.city ="Amaravti";
+        document.write("Current city is :- "+ student.city+"<br>")
+
+        //Adding the element
+        student.rollNo = 19;
+        
+        document.write("Roll No is :- ",student.rollNo);
+
+    </script>
+</body>
+</html>
