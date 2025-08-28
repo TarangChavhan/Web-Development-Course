@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color: white;
+            
+        }
+        .parent{
+            background-color: black;
+            width: 218px;
+            height: fit-content;
+            border: 1.5px solid white;
+            border-radius: 10px;
+        }
+        .car{
+            width: 200px;
+            margin: 6px;
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+        body{
+            justify-content: center; /* Horizontal center */
+            align-items: center;     /* Vertical center */
+            height: 100vh;  
+            display: flex;
+             background-color: brown;
+        }
+        .point span{
+            border: 1px solid gray;
+            border-radius: 8px;
+            background: rgb(79, 25, 5);
+            margin: 5px;
+            color: white;
+            padding: 5px;
+            margin-left: 10px;
+            font-size: 10px;
+        }
+        .point{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        h2{
+            margin: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <img src="car.jpg" alt="car" class="car">  
+        
+        <div class="point">
+            <span>Speed</span>
+            <span>Current Ownership</span>
+            <span>Brand</span>
+        </div>
+
+
+        <div class="content">
+            <h2><<- Bugatti ->></h2>
+            <p>
+               Bugatti is a French luxury hypercar brand, famous for record-breaking speed, powerful W16 engines, artistic design, exclusivity, and unmatched craftsmanship blending technology with elegance.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
