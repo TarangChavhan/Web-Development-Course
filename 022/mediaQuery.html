@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query in css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 80vh;
+            height: 60vh;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: purple
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 16px;
+            height: 100vh;
+            background-color: aqua;
+        }
+        .box{
+            border: 0.5px solid black;
+            margin: 6px;
+            width: 15vh;
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            background-color: orangered;
+            color: white;
+        }
+        h2{
+            display: flex;
+            justify-content: start;
+            align-items: start;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>This is Media Query</h2>
+    </div>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>    
+</body>
+</html>

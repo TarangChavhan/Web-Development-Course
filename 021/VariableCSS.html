@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable in Css</title>
+    <style>
+        :root{
+            --blackcolor: black;
+            --whiteColor: white;
+            --borderHeading: 2px solid blue;
+            --browncolor: brown;
+            
+            /* padding */
+            --defpad: 28px;
+
+            /* brightness */
+            --defop: 0.2; 
+        }
+        *{
+            color: var(--whiteColor);
+        }
+        body{
+            background-color: var(--blackcolor);
+        }
+        .container{
+            opacity: var(--defop);
+            list-style: none;
+            padding: var(--defpad);
+            border: 2px solid var(--seccolor);
+            background-color: var(--browncolor);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">  
+        
+        <div class="point">
+            <span>Speed</span>
+            <span>Current Ownership</span>
+            <span>Brand</span>
+        </div>
+        <div class="container">
+            <ul>
+                <li>Home</li>
+                <li>Contact</li>
+                <li>Labrraries</li>
+            </ul>
+        </div>
+
+
+        <div class="content">
+            <h2><<- Bugatti ->></h2>
+            <p>
+               Bugatti is a French luxury hypercar brand, famous for record-breaking speed, powerful W16 engines, artistic design, exclusivity, and unmatched craftsmanship blending technology with elegance.
+            </p>
+        </div>
+    </div> 
+</body>
+</html>
