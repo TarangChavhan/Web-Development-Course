@@ -1,0 +1,29 @@
+.contener{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 20vh;
+    border: 2px solid black;
+    margin: 1pt;
+    padding: 16px;
+}
+body{
+    border: 1px solid black;
+    display: flex;
+
+}
+button{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    padding: 1vh;
+    margin: 2vh;
+}
+.main{
+    display: flex;
+    margin: 1vh;
+    padding-left: 5vh;
+}
+h5{
+    padding-left: 100vh;
+}

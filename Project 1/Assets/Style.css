@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+
+.main {
+    background-image: url("bg.jpg");
+    height: 80vh;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: max(990px,100vw);
+}
+
+.main .box {
+    opacity: 0.69;
+    height: 80vh;
+    background-color: black;
+    width: 100%;
+    top: 0%;
+    position: absolute;
+}
+
+nav {
+    margin: auto;
+    max-width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+nav img {
+    width: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+}
+.heading{
+    color: white;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    gap: 16px   ;
+}
+.heading> :nth-child(1){
+    font-size: 48px;
+    font-weight: 900;
+}
+.heading> :nth-child(2){
+    font-size: 48px;
+    font-weight: 900;
+}
+.heading> :nth-child(3){
+    font-size: 48px;
+    font-weight: 900;
+}
+input{
+    margin-top: 32px;
+}
+#Submit{
+    background-color: red;
+    padding: 16px;
+    border: 1.5px solid black;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    width: 180px;
+}
+#Email{
+    background-color: black;
+    padding: 16px;
+    border: 1.5px solid gray;
+    border-radius: 5px;
+    width: 280px;
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Query in CSS</title>
+  <title>Media Query in css</title>
   <style>
     * {
       margin: 0;
@@ -12,35 +12,52 @@
     }
     body {
       display: flex;
-      justify-content: center; /* horizontal center */
-      align-items: center;     /* vertical center */
-      height: 100vh;           /* full viewport height */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: aqua;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column; /* stack h2 above container */
+      align-items: center;
+      gap: 15px; /* space between heading & container */
+    }
+    h2 {
+      color: black;
     }
     .container {
       width: 80vh;
       height: 60vh;
       border: 2px solid black;
       display: flex;
-      justify-content: center; /* centers inner boxes horizontally */
-      align-items: center;     /* centers inner boxes vertically */
-      gap: 10px;               /* space between inner boxes */
+      justify-content: center;
+      align-items: center;
+      background-color: purple;
+      gap: 10px;
     }
     .box {
-      width: 50px;
-      height: 50px;
-      border: 1px solid black;
+      border: 0.5px solid black;
+      width: 15vh;
+      height: 40vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 40px;
+      background-color: orangered;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </div>    
+  <div class="wrapper">
+    <h2>This is Media Query</h2>
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+    </div>
+  </div>
 </body>
 </html>

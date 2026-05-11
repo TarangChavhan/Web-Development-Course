@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Selector in CSS</title>
+    <style>
+        .box:first-child {
+            background-color: red;
+        }
+        /* first chide background red */
+
+        .boxes::first-line {
+            color: blue;
+        }
+        /* Boxes first line blue */
+
+        .boxes *{
+            border: 2px solid blue;
+        } /* All Element Applied Border*/
+        .boxes, .box, p{
+            padding: 16px;
+        }
+        .box:nth-child(even){
+            background-color: aquamarine;
+        }
+        .boxes::before{
+            content: "I did cheat in Exam and become first";
+        }
+        .boxes::after{
+            content: "I did not do Cheat in Exam Thats why i am last ";
+        }
+        ::selection{
+            background-color: black;
+            color: white;
+        }
+        .box::first-letter{
+            font-size: 45px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div class="box">Hey I am First</div>
+        <div class="box">Hey I am Second</div>
+        <div class="box">I am Third</div>
+        <div class="box">I am fourth</div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia debitis excepturi impedit culpa ut inventore
+            beatae aliquid ipsam perferendis, ratione cumque architecto modi quis ullam molestias repellendus atque
+            eligendi quos?</p>
+    </div>
+</body>
+
+</html>
