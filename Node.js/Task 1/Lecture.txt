@@ -1,0 +1,4 @@
+"install nodemon" 
+for automatically refreshment of code 
+ex.
+No need to start server again and again
