@@ -1,0 +1,54 @@
+.navbar{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+}
+.item{
+    display: flex;
+    margin: 1vh;
+    list-style: none;
+}
+li{
+    padding: 4vh;
+}
+.b{
+    margin: 4vh;
+    color: pink;
+}
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: darkgoldenrod;
+    color: black;
+    flex-direction: column;
+}
+h2{
+    color: rgb(43, 43, 43);
+}
+button{
+    background-color: rgb(225, 70, 77);
+    margin: 16px;
+    padding: 16px;
+    text-decoration: solid,black;
+    font-weight: 900;
+    border: 1px,solid,black;
+    border-radius: 10px;
+}
+p{
+    background-color: black;
+    color: blue;
+    padding: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
