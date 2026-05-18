@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+button{
+    background-color: crimson;
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: 900;
+}
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    border: 1px solid gray;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+div,*{
+    margin: 6px;
+    display: flex;
+    justify-content: center
+}
