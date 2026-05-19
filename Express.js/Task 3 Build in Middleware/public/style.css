@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+}
+h1:hover{
+    background-color: aqua;
+    transition: 0.1s;
+}
