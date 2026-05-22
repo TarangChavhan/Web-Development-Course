@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Naman Chavhan",
+    "email": "naman01@gmail.com",
+    "age": 21,
+    "city": "Akola"
+  },
+  {
+    "id": 2,
+    "name": "Tarang Sharma",
+    "email": "tarang02@gmail.com",
+    "age": 22,
+    "city": "Pune"
+  },
+  {
+    "id": 3,
+    "name": "Om Verma",
+    "email": "om03@gmail.com",
+    "age": 20,
+    "city": "Mumbai"
+  },
+  {
+    "id": 4,
+    "name": "Suraj Patil",
+    "email": "suraj04@gmail.com",
+    "age": 23,
+    "city": "Nagpur"
+  },
+  {
+    "id": 5,
+    "name": "Yash Thakur",
+    "email": "yash05@gmail.com",
+    "age": 24,
+    "city": "Delhi"
+  },
+  {
+    "id": 6,
+    "name": "Rahul Mehta",
+    "email": "rahul06@gmail.com",
+    "age": 25,
+    "city": "Hyderabad"
+  },
+  {
+    "id": 7,
+    "name": "Priya Singh",
+    "email": "priya07@gmail.com",
+    "age": 22,
+    "city": "Bangalore"
+  },
+  {
+    "id": 8,
+    "name": "Sneha Joshi",
+    "email": "sneha08@gmail.com",
+    "age": 21,
+    "city": "Chennai"
+  },
+  {
+    "id": 9,
+    "name": "Aman Gupta",
+    "email": "aman09@gmail.com",
+    "age": 26,
+    "city": "Jaipur"
+  },
+  {
+    "id": 10,
+    "name": "Karan Malhotra",
+    "email": "karan10@gmail.com",
+    "age": 27,
+    "city": "Indore"
+  }
+]
