@@ -19,4 +19,4 @@ app.get("/User/:name",(req,resp)=>{
     resp.send(`Hello i am ${display_name}`)    
 })
 
-app.listen(3000);
+app.listen(3000)

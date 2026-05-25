@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <% result.forEach(result=>{%>
+        <ul>
+            <li>
+                <%= result.name %>
+                <%= result.rollNumber %>
+                <%= result.email %>
+                <%= result.marks.computer %>
+                 <%= result.marks.science %>
+            </li>
+        </ul>
+   <% }) %>
+</body>
+</html>
