@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #f4f7fb;
+}
+
+/* Main Container */
+
+.addTaskContainer {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+}
+
+/* Card */
+
+.taskCard {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+/* Input */
+
+.taskInput,
+.taskTextarea {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  transition: 0.3s ease;
+}
+
+.taskInput:focus,
+.taskTextarea:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+/* Textarea */
+
+.taskTextarea {
+  resize: none;
+}
+
+/* Button */
+
+.addBtn {
+  width: 100%;
+
+  display: inline-block;
+
+  text-align: center;
+
+  padding: 14px;
+
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+
+  color: white;
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.addBtn:hover {
+  background: linear-gradient(90deg, #1d4ed8, #1e40af);
+
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .taskCard {
+    padding: 25px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}

@@ -1,0 +1,66 @@
+/* Container */
+.task-list {
+  width: 85%;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: 80px 1fr 2fr 150px;
+
+  border: 2px solid #222;
+  font-family: Arial, sans-serif;
+}
+
+/* Headers */
+.list-header {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+  border: 1px solid #444;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Data Items */
+.list-item {
+  padding: 12px;
+  border: 1px solid #999;
+  text-align: center;
+  background-color: #f5f5f5;
+  word-break: break-word;
+}
+
+/* Alternate Rows */
+.list-item:nth-child(even) {
+  background-color: #ebebeb;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  font-size: 28px;
+}
+
+/* Buttons */
+.action-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 3px;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background-color: orange;
+  color: white;
+}
+
+.delete-btn {
+  background-color: crimson;
+  color: white;
+}
