@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import '../Style/list.css'
+import { Link } from 'react-router-dom';
 const List = () => {
 
   const [taskData, setTaskData] = useState([]);
@@ -18,7 +19,7 @@ const List = () => {
   }
 
   const deleteTask = async (id) => {
-    let item = await fetch('http://localhost:3000/delete/'+id,{method:'delete'});
+    let item = await fetch('http://localhost:3000/delete/' + id, { method: 'delete' });
     item = await item.json();
     if (item.success) {
       getListedData();
@@ -40,8 +41,12 @@ const List = () => {
             <Fragment key={item._id}>
               <li className='list-item'>{index + 1}</li>
               <li className='list-item'>{item.title}</li>
-              <li className='list-item'>{item.Description}</li>
-              <li className='list-item'><button onClick={()=>deleteTask(item._id)}>Delete</button> <button>Update</button></li>
+              <li className='list-item'>{item.Description}</li> 
+              <li
+                className='list-item'>
+                <button onClick={() => deleteTask(item._id)}>Delete</button>
+                <button><Link to={`/Update/${item._id}`}>Update</Link></button>
+              </li>
             </Fragment>
           ))
         }
