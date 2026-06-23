@@ -1,12 +1,11 @@
-/* Container */
 .task-list {
-  width: 85%;
+  width: 90%;
   margin: 30px auto;
   padding: 0;
   list-style: none;
 
   display: grid;
-  grid-template-columns: 80px 1fr 2fr 150px;
+  grid-template-columns: 60px 80px 1fr 2fr 180px;
 
   border: 2px solid #222;
   font-family: Arial, sans-serif;
@@ -14,53 +13,79 @@
 
 /* Headers */
 .list-header {
-  background-color: #222;
+  background: #222;
   color: white;
   padding: 15px;
   border: 1px solid #444;
-  font-size: 18px;
-  font-weight: bold;
   text-align: center;
+  font-weight: bold;
 }
 
-/* Data Items */
+/* Items */
 .list-item {
   padding: 12px;
-  border: 1px solid #999;
+  border: 1px solid #ccc;
   text-align: center;
-  background-color: #f5f5f5;
-  word-break: break-word;
+  background: #f9f9f9;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Alternate Rows */
-.list-item:nth-child(even) {
-  background-color: #ebebeb;
+/* Buttons Container */
+.list-item button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.list-item button:first-child {
+  background: crimson;
+  color: white;
+}
+
+.list-item button:last-child {
+  background: orange;
+  color: white;
+}
+
+.list-item button a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Heading */
 h2 {
   text-align: center;
-  margin-top: 20px;
-  color: #333;
-  font-size: 28px;
+  margin: 20px 0;
 }
-
-/* Buttons */
-.action-btn {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 5px;
+.DeleteMultiple{
+  margin-left: 13vh;
+  background-color: red;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: #444;
+  font-weight: bold;
   cursor: pointer;
-  margin: 3px;
-  font-size: 14px;
+}
+.DeleteMultiple:hover{
+  background-color: rgb(239, 75, 75);
 }
 
-.edit-btn {
-  background-color: orange;
-  color: white;
-}
+/* Mobile */
+@media (max-width: 768px) {
+  .task-list {
+    grid-template-columns: 50px 60px 1fr;
+    font-size: 14px;
+  }
 
-.delete-btn {
-  background-color: crimson;
-  color: white;
+  .list-header:nth-child(4),
+  .list-header:nth-child(5),
+  .list-item:nth-child(5n + 4),
+  .list-item:nth-child(5n + 5) {
+    display: none;
+  }
 }

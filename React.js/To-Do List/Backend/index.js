@@ -75,6 +75,19 @@ app.put("/update-task", async(req,resp)=>{
     resp.send("Working...");
 })
 
+app.delete("/delete-multiple", async(req,resp)=>{
+    const db = await connection()
+    const collection = await db.collection(collectionName);
+    const Ids = req.body;
+    const deleteTaskIDS =  Ids.map((item)=>new ObjectId(item))
+    const result = await collection.deleteMany({_id:{$in:deleteTaskIDS}});
+    if(result){
+        resp.send({message:"Task Deleted",success:true,result})
+    } else{
+        resp.send({message:"Task Not Deleted, Try again After Sometime...",sucess:false})
+    }
+})
+
 
 
 app.listen(3000);

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Style/addList.css";
 
 function AddList () {
   const [taskData,setTaskData] = useState();
+  const navigate = useNavigate();
 
   const SendData=async ()=>{
     console.log(taskData);
@@ -16,7 +17,7 @@ function AddList () {
     })    
     result = await result.json()
     if(result){
-      console.log("new task added")
+      navigate("/");
     }
   }
   return (
