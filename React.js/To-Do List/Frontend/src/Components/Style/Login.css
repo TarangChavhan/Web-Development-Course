@@ -1,0 +1,103 @@
+/* Page Background */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+/* Center Container */
+.Container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Card */
+.Card {
+  width: 380px;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+/* Heading */
+.Card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* Labels */
+.Paragraph {
+  margin: 12px 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Input Fields */
+.Input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.Input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Login Button */
+.btnLogin {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #2563eb;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnLogin:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+/* Signup Text */
+.SingUp {
+  text-align: center;
+  margin-top: 20px;
+  color: #f8fafc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.SingUp:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .Card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .Card h2 {
+    font-size: 24px;
+  }
+}

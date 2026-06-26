@@ -2,6 +2,7 @@ import express from 'express'
 import { collectionName, connection } from './dbConfig.js';
 import cors from 'cors'
 import { ObjectId } from 'mongodb';
+import jwt from 'jsonwebtoken'
 
 const app = express();
 
@@ -60,7 +61,7 @@ app.get("/task/:id", async(req,resp)=>{
 
 app.put("/update-task", async(req,resp)=>{
     const db = await connection()
-    const collection = await db.collection(collectionName);
+    const collection =  db.collection(collectionName);
     const {_id,...fields} = req.body;
     const update = {$set:fields}
     console.log(fields);
@@ -72,12 +73,11 @@ app.put("/update-task", async(req,resp)=>{
     } else{
         resp.send({message:"Error While Updating Data",success:false})
     }
-    resp.send("Working...");
 })
 
 app.delete("/delete-multiple", async(req,resp)=>{
     const db = await connection()
-    const collection = await db.collection(collectionName);
+    const collection =  db.collection(collectionName);
     const Ids = req.body;
     const deleteTaskIDS =  Ids.map((item)=>new ObjectId(item))
     const result = await collection.deleteMany({_id:{$in:deleteTaskIDS}});
@@ -88,6 +88,54 @@ app.delete("/delete-multiple", async(req,resp)=>{
     }
 })
 
+app.post("/singUp",async (req,resp)=>{
+    const UserData = req.body;
+    if(UserData.email && UserData.password){
+        const db = await connection();
+        const collection = await db.collection('users');
+        const result = await collection.insertOne(UserData);
+        if(result){
+            jwt.sign(UserData,'Google',{expiresIn:'5d'},(error,token)=>{
+                resp.send({
+                    success: true,
+                    msg: 'singup done',
+                    token
+                })
+            })
+        }
+    } else{
+        resp.send({
+            success: false,
+            msg: 'signup not done'
+        })
+    }
+})
+
+
+app.post("/Login",async (req,resp)=>{
+    const UserData = req.body;
+    if(UserData.email && UserData.password){
+        const db = await connection();
+        const collection = await db.collection('users');
+        const result = await collection.findOne({email: UserData.email,
+    password: UserData.password});
+        if(result){
+            jwt.sign(UserData,'Google',{expiresIn:'5d'},(error,token)=>{
+                resp.send({
+                    success: true,
+                    msg: 'Login Successfully',
+                    token
+                })
+            })
+        }
+    } else{
+        resp.send({
+            success: false,
+            msg: 'signup not done',
+        })
+    }
+
+})
 
 
 app.listen(3000);
