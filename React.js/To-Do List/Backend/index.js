@@ -2,53 +2,55 @@ import express from 'express'
 import { collectionName, connection } from './dbConfig.js';
 import cors from 'cors'
 import { ObjectId } from 'mongodb';
-import jwt from 'jsonwebtoken'
+import jwt, { decode } from 'jsonwebtoken'
+import cookieParser from 'cookie-parser';
 
 const app = express();
-
-app.use(cors())
 app.use(express.json());
+app.use(cookieParser());
+app.use(cors({
+    origin:'http://localhost:5173',
+    credentials:true
+}))
 
-app.delete("/delete/:id", async(req,resp)=>{
+
+app.delete("/delete/:id", verifyJWT,async(req,resp)=>{
     const db = await connection()
-    const collection = await db.collection(collectionName);
+    const collection =  db.collection(collectionName);
     const result = await collection.deleteOne({_id:new ObjectId(req.params.id)});
     if(result){
         resp.send({message:"Task Deleted",success:true,result})
     } else{
         resp.send({message:"Task Not Deleted, Try again After Sometime...",sucess:false})
     }
-    resp.send("Working...");
 })
 
-app.post("/add-task", async(req,resp)=>{
+app.post("/add-task",verifyJWT, async(req,resp)=>{
     const db = await connection()
-    const collection = await db.collection(collectionName);
+    const collection =  db.collection(collectionName);
     const result = await collection.insertOne(req.body);
     if(result){
         resp.send({message:"New Task Added",sucess:true,result})
     } else{
         resp.send({message:"Task Not Added",sucess:false})
     }
-    resp.send("Working...");
 })
-app.get("/tasks", async(req,resp)=>{
+app.get("/tasks", verifyJWT, async(req,resp)=>{
+     console.log("Cookies:", req.cookies.token);
+
     const db = await connection()
-    const collection = await db.collection(collectionName);
+    const collection =  db.collection(collectionName);
     const result = await collection.find().toArray();
     if(result){
         resp.send({message:"Task Listed Sucessfully",success:true,result})
     } else{
         resp.send({message:"Error While Fetching Data",success:false})
     }
-    resp.send("Working...");
 })
 
-
-
-app.get("/task/:id", async(req,resp)=>{
+app.get("/task/:id", verifyJWT, async(req,resp)=>{
     const db = await connection()
-    const collection = await db.collection(collectionName);
+    const collection =  db.collection(collectionName);
     const id = req.params.id;
     const result = await collection.findOne({_id:new ObjectId(id)});
     if(result){
@@ -56,10 +58,9 @@ app.get("/task/:id", async(req,resp)=>{
     } else{
         resp.send({message:"Error While Fetching Data",success:false})
     }
-    resp.send("Working...");
 })
 
-app.put("/update-task", async(req,resp)=>{
+app.put("/update-task", verifyJWT, async(req,resp)=>{
     const db = await connection()
     const collection =  db.collection(collectionName);
     const {_id,...fields} = req.body;
@@ -75,7 +76,7 @@ app.put("/update-task", async(req,resp)=>{
     }
 })
 
-app.delete("/delete-multiple", async(req,resp)=>{
+app.delete("/delete-multiple", verifyJWT, async(req,resp)=>{
     const db = await connection()
     const collection =  db.collection(collectionName);
     const Ids = req.body;
@@ -112,11 +113,11 @@ app.post("/singUp",async (req,resp)=>{
 })
 
 
-app.post("/Login",async (req,resp)=>{
+app.post("/Login", async (req,resp)=>{
     const UserData = req.body;
     if(UserData.email && UserData.password){
         const db = await connection();
-        const collection = await db.collection('users');
+        const collection =  db.collection('users');
         const result = await collection.findOne({email: UserData.email,
     password: UserData.password});
         if(result){
@@ -127,15 +128,29 @@ app.post("/Login",async (req,resp)=>{
                     token
                 })
             })
-        }
-    } else{
+        }else{
         resp.send({
             success: false,
             msg: 'signup not done',
         })
     }
+    }
 
 })
+
+
+function verifyJWT(req, res, next) {
+    const token = req.cookies.token;
+    jwt.verify(token, "Google", (err, decoded) => {
+        if (err) {
+            return res.send({
+                success: false,
+                message: "Invalid or expired token."
+            });
+        }
+        next();
+    });
+}
 
 
 app.listen(3000);

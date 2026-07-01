@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Style/Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [userData,setUserData] = useState()
+  const [userData,setUserData] = useState({ email: '',
+  password: ''
+})
+
+  useEffect(()=>{
+    if(localStorage.getItem('login')){
+      navigate("/");
+    }
+  })
+  const navigate = useNavigate();
   const HandleLogin = async ()=>{
     console.log(userData);
     let result = await fetch('http://localhost:3000/Login',{
@@ -14,8 +23,12 @@ const Login = () => {
       }
     })    
     result = await result.json()
-    if(result){
+    if(result.success){
         document.cookie ="token="+result.token;
+        localStorage.setItem('login',userData.email)
+        navigate("/");
+    }else{
+      alert("Try After Sometime...")
     }
   }
 

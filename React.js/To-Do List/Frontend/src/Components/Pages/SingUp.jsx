@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Style/SingUp.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SingUp = () => {
+    const Navaigate = useNavigate();
     const [UserData,setUserData] = useState();
+    useEffect(()=>{
+    if(localStorage.getItem('login')){
+      Navaigate("/");
+    }
+  })
     const SingUpUser= async()=>{
     console.log(UserData);
     let result = await fetch('http://localhost:3000/singUp',{
@@ -14,8 +20,10 @@ const SingUp = () => {
       }
     })    
     result = await result.json()
-    if(result){
+    if(result.success){
         document.cookie ="token="+result.token;
+        localStorage.setItem('login',UserData.email);
+        Navaigate("/");
     }
     }
   return (

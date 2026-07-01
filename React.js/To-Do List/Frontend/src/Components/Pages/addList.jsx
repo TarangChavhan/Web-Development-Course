@@ -11,6 +11,7 @@ function AddList () {
     let result = await fetch('http://localhost:3000/add-task',{
       method:'Post',
       body:JSON.stringify(taskData),
+      credentials:'include',
       headers:{
         'Content-Type':'Application/Json'
       }

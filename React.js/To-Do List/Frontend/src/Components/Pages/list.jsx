@@ -12,7 +12,8 @@ const List = () => {
 
 
   const getListedData = async () => {
-    let result = await fetch('http://localhost:3000/tasks');
+    let result = await fetch('http://localhost:3000/tasks',{credentials:'include'});
+
     let list = await result.json();
     if (list.success) {
       setTaskData(list.result)
@@ -20,7 +21,7 @@ const List = () => {
   }
 
   const deleteTask = async (id) => {
-    let item = await fetch('http://localhost:3000/delete/' + id, { method: 'delete' });
+    let item = await fetch('http://localhost:3000/delete/' + id, { method: 'delete',credentials:'include' });
     item = await item.json();
     if (item.success) {
       getListedData();
@@ -51,6 +52,7 @@ const List = () => {
     let DeletedItem = await fetch('http://localhost:3000/delete-multiple',{
       method:'delete',
       body:JSON.stringify(selectTask),
+      credentials:'include',
       headers:{
         'Content-Type':'Application/JSON'
       }

@@ -27,6 +27,7 @@ function UpdateTask () {
     const upDateTask = async ()=>{
       let result = await fetch(`http://localhost:3000/update-task`,{
         method:'put',
+        credentials:'include',
         body:JSON.stringify(taskData),
         headers:{
           'Content-Type':'Application/Json'
