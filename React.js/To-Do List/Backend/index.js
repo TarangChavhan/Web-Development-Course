@@ -47,7 +47,6 @@ app.get("/tasks", verifyJWT, async(req,resp)=>{
         resp.send({message:"Error While Fetching Data",success:false})
     }
 })
-
 app.get("/task/:id", verifyJWT, async(req,resp)=>{
     const db = await connection()
     const collection =  db.collection(collectionName);
@@ -59,7 +58,6 @@ app.get("/task/:id", verifyJWT, async(req,resp)=>{
         resp.send({message:"Error While Fetching Data",success:false})
     }
 })
-
 app.put("/update-task", verifyJWT, async(req,resp)=>{
     const db = await connection()
     const collection =  db.collection(collectionName);
@@ -75,7 +73,6 @@ app.put("/update-task", verifyJWT, async(req,resp)=>{
         resp.send({message:"Error While Updating Data",success:false})
     }
 })
-
 app.delete("/delete-multiple", verifyJWT, async(req,resp)=>{
     const db = await connection()
     const collection =  db.collection(collectionName);
@@ -88,7 +85,6 @@ app.delete("/delete-multiple", verifyJWT, async(req,resp)=>{
         resp.send({message:"Task Not Deleted, Try again After Sometime...",sucess:false})
     }
 })
-
 app.post("/singUp",async (req,resp)=>{
     const UserData = req.body;
     if(UserData.email && UserData.password){
@@ -111,8 +107,6 @@ app.post("/singUp",async (req,resp)=>{
         })
     }
 })
-
-
 app.post("/Login", async (req,resp)=>{
     const UserData = req.body;
     if(UserData.email && UserData.password){
@@ -135,10 +129,7 @@ app.post("/Login", async (req,resp)=>{
         })
     }
     }
-
 })
-
-
 function verifyJWT(req, res, next) {
     const token = req.cookies.token;
     jwt.verify(token, "Google", (err, decoded) => {
@@ -151,6 +142,4 @@ function verifyJWT(req, res, next) {
         next();
     });
 }
-
-
 app.listen(3000);
